@@ -470,9 +470,9 @@ function setupFinaleChapter(chapterId) {
         <div class="finale-content">
             <h1 class="finale-title">Happy Birthday</h1>
             <p class="finale-subtitle">DAKTARI M.J/O.T</p>
-            <P class="finale-description">Mwaka ikunice Manze.</p>
+            <P class="finale-description">.</p>Lebe! Liebe! Lache!</p>
             <div class="finale-hearts">❤️ 💕 ✨ 💕 ❤️</div>
-            <p class="finale-message">May your day be as beautiful as your smile</p>
+            <p class="finale-message">Mögen alle deine Wünsche in Erfüllung gehen!</p>
         </div>
     `;
     
