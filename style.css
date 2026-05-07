@@ -760,6 +760,37 @@ h1, h2 {
     }
 }
 
+/* Desktop centering for behavior B chapters */
+@media (min-width: 769px) {
+    .lyrics-overlay {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Only offset collage when sidebar is present (behavior A) */
+    .chapter:not(.behavior-b) .collage-container {
+        transform: translateX(12.5%);
+    }
+    
+    /* Center collage for full-width behavior B chapters */
+    .chapter.behavior-b .collage-container {
+        transform: translateX(0);
+        left: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Center lyrics overlay for behavior B */
+    .chapter.behavior-b .lyrics-overlay {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 60px;
+    }
+}
+}
+
 /* Very small screens */
 @media (max-width: 380px) {
     .floating-image {
