@@ -6,7 +6,7 @@ const TIMING = {
     ch5: { start: 139, end: 172, behavior: 'A', lyricsOffset: 970, lyricsSpeed: 100, textSpeed: 35 },
     ch6: { start: 173, end: 207, behavior: 'B', lyricsOffset: 1300, lyricsSpeed: 180, textSpeed: 35 },
     ch7: { start: 208, end: 260, behavior: 'A', lyricsOffset: 207, lyricsSpeed: 100, textSpeed: 35 },
-    ch8: { start: 261, end: 290, behavior: 'B', lyricsOffset: 2000, lyricsSpeed: 150, textSpeed: 35 },
+    ch8: { start: 261, end: 290, behavior: 'B', lyricsOffset: 2000, lyricsSpeed: 120, textSpeed: 35 },
     ch9: { start: 291, end: 315, behavior: 'C', lyricsOffset: 290, lyricsSpeed: 30, textSpeed: 35 }
 };
 
@@ -171,28 +171,32 @@ const CHAPTER_CONTENT = {
 };
 
 const MEMORY_IMAGES = [
-    { src: 'joan/j1.jpg', tag: 'Many days worth living for.' },
-    { src: 'joan/jo2.jpg', tag: 'Don\'t forget your moments, let them replay in your head.' },
-    { src: 'joan/jo3.jpg', tag: 'Everything felt right and calm.' },
+    { src: 'joan/j1.jpg', tag: 'OT in the making.' },
+    { src: 'joan/jo2.jpg', tag: 'A victory earned ,a moment worth celebrating.' },
+    { src: 'joan/jo3.jpg', tag: 'Dont know when is this but it is an evidence growth is envitable.' },
     { src: 'joan/jo4.jpg', tag: 'Live to blow many candles.' },
-    { src: 'joan/jo5.jpg', tag: 'The kind of laugh that fills every room with light.' },
-    { src: 'joan/jo6.jpg', tag: 'A simple day that became unforgettable.' },
-    { src: 'joan/jo7.jpg', tag: 'The kind of memory that stays in the heart.' },
-    { src: 'joan/jo8.jpg', tag: 'The conversations you have always leave people better.' },
-    { src: 'joan/jo9.jpg', tag: 'A victory earned, a moment worth celebrating.' },
-    { src: 'joan/jo10.jpg', tag: 'Present, strong, and exactly where she needed to be.' },
-    { src: 'joan/jo11.jpg', tag: 'Those eyes carry a story worth telling.' },
+    { src: 'joan/jo5.jpg', tag: 'The girl is now 22.' },
+    { src: 'joan/jo6.jpg', tag: '......' },
+    { src: 'joan/jo7.jpg', tag: 'Emblem of what the world has not seen yet.' },
+    { src: 'joan/jo8.jpg', tag: 'Keep smiling gem.' },
+    { src: 'joan/jo9.jpg', tag: 'Don\'t forget your moments, let them replay in your head.' },
+    { src: 'joan/jo10.jpg', tag: 'Queen of smiles init.' },
+    { src: 'joan/jo11.jpg', tag: '.' },
     { src: 'joan/jo12.jpg', tag: 'A beautiful soul captured in a single frame.' },
     { src: 'joan/jo13.jpg', tag: 'Every photo holds a piece of forever.' },
     { src: 'joan/jo14.jpg', tag: 'That smile belongs on a billboard.' },
     { src: 'joan/jo15.jpg', tag: 'Moments like these make life worth living.' },
-    { src: 'joan/jo16.jpg', tag: 'That smile has always lit up every room she walks into.' },
+    { src: 'joan/jo16.jpg', tag: 'Strong indeed, once claimed she can\'t cry😁 .'},
     { src: 'joan/jo17.jpg', tag: 'A memory frozen in time, forever cherished.' },
-    { src: 'joan/jo18.jpg', tag: 'Her presence has a way of making everything feel right.' },
+    { src: 'joan/jo18.jpg', tag: 'Happy birthday, Gem!' },
     { src: 'joan/jo19.jpg', tag: 'Every glance, every smile, pure magic.' },
-    { src: 'joan/jo20.jpg', tag: 'This is what happiness looks like.' },
-    { src: 'joan/jo21.jpg', tag: 'A fearless step into a powerful new year.' },
-    { src: 'joan/jo22.jpg', tag: 'A confident, joyful moment worth remembering.' }
+    { src: 'joan/jo20.jpg', tag: 'Let every sunsrise shining on you remind you purpose.Born to win.' },
+    { src: 'joan/jo21.jpg', tag: 'The girl is working to transform lives even though ni juu ya mukuchu😉.' },
+    { src: 'joan/jo22.jpg', tag: 'A confident, joyful moment worth remembering.' },
+    { src: 'joan/jo23.jpg', tag: 'Ever wondered why somebody would be this serious on an a finalists Sunday?' },
+    { src: 'joan/jo24.jpg', tag: 'May Your light shines brighter and brighter to the perfect day.' },
+    { src: 'joan/jo25.jpg', tag: 'A beautiful memory that will stay forever.' },
+    { src: 'joan/jo26.jpg', tag: 'Remember to stay happy😊.' }
 ];
 
 let musicStarted = false;
@@ -507,7 +511,7 @@ function updateChapterContent(chapterId, timingInfo) {
     if (profilePhoto) profilePhoto.src = config.profileImage || 'mine/m1.jpg';
     if (profileName) profileName.textContent = config.sender || 'Nashon';
     if (profileStatus) profileStatus.textContent = config.status || 'online';
-    if (bottomBar) bottomBar.textContent = config.bottomText || '';
+    if (bottomBar) bottomBar.textContent = '';
 
     if (timingInfo.behavior === 'A') {
         // Sidebar + Chat layout with cinematic card display
