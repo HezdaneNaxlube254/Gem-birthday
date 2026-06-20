@@ -5,9 +5,9 @@ const TIMING = {
     ch4: { start: 102, end: 138, behavior: 'B', lyricsOffset: 830, lyricsSpeed: 150, textSpeed: 35 },
     ch5: { start: 139, end: 172, behavior: 'A', lyricsOffset: 970, lyricsSpeed: 100, textSpeed: 35 },
     ch6: { start: 173, end: 207, behavior: 'B', lyricsOffset: 1300, lyricsSpeed: 180, textSpeed: 35 },
-    ch7: { start: 208, end: 260, behavior: 'A', lyricsOffset: 207, lyricsSpeed: 100, textSpeed: 35 },
-    ch8: { start: 261, end: 290, behavior: 'B', lyricsOffset: 2000, lyricsSpeed: 120, textSpeed: 35 },
-    ch9: { start: 291, end: 315, behavior: 'C', lyricsOffset: 290, lyricsSpeed: 30, textSpeed: 35 }
+    ch7: { start: 208, end: 260, behavior: 'A', lyricsOffset: 0, lyricsSpeed: 110, textSpeed: 35 },
+    ch8: { start: 261, end: 290, behavior: 'B', lyricsOffset: 180, lyricsSpeed: 110, textSpeed: 35 },
+    ch9: { start: 291, end: 315, behavior: 'C', lyricsOffset: 0, lyricsSpeed: 30, textSpeed: 35 }
 };
 
 const PLAYBACK_RATE = 0.9;
@@ -16,8 +16,8 @@ const IMAGE_DURATION = 5;
 
 // Chat messages that appear at specific times
 const MESSAGES = [
-    { time: 5, text: 'Happy Birthday! 🎂 The day is finally here and my heart is full.', sender: 'Nashon' },
-    { time: 11, text: 'Today is all about celebrating you and every bright thing you bring into the world.', sender: 'Nashon' },
+    { time: 5, text: 'Happy Birthday! 🎂 Rafiki.', sender: 'n.k' },
+    { time: 11, text: 'Today is all about celebrating you and the  bright things you bring to the world.', sender: 'Nashon' },
     { time: 17, text: 'Wishing you joy, laughter, and a year of more reasons to smile.', sender: 'Nashon' },
     { time: 23, text: 'Every birthday is a new chapter. I hope this one feels fresh and wonderful.', sender: 'Nashon' },
     { time: 29, text: 'May today be a reminder of how many people are cheering for you.', sender: 'Nashon' },
@@ -30,11 +30,11 @@ const MESSAGES = [
     { time: 72, text: 'Another chapter of your story, each moment a treasure.', sender: 'Nashon' },
     { time: 78, text: 'A few moments from your journey, presented with care and grace.', sender: 'Nashon' },
     { time: 84, text: 'Every delicious birthday bite should remind you of good days ahead.', sender: 'Nashon' },
-    { time: 90, text: 'Good friends, good music, and a happy day — that is what today is for.', sender: 'Nashon' },
+    { time: 90, text: 'Good friends, good music, and a happy day — that is what birthdays are  for.', sender: 'Nashon' },
     { time: 96, text: 'Minimal fuss, maximum celebration. That is the simple birthday wish for you.', sender: 'Nashon' },
     { time: 102, text: 'Take a deep breath and enjoy this day in the way that feels right to you.', sender: 'Nashon' },
     { time: 108, text: 'Your birthday deserves warm thoughts, sweet moments, and calm energy.', sender: 'Nashon' },
-    { time: 114, text: 'I am grateful for the chance to say happy birthday and mean it fully.', sender: 'Nashon' },
+    { time: 114, text: 'I am grateful for the chance to say happy birthday and this boy means it fully.', sender: 'Nashon' },
     { time: 120, text: 'This song is a small way of honoring your day with rhythm and feeling.', sender: 'Nashon' },
     { time: 126, text: 'Birthday joys should be easy to find — like a smile, a laugh, or a good memory.', sender: 'Nashon' },
     { time: 132, text: 'Your strengths, your kindness, and your spirit make today worth celebrating.', sender: 'Nashon' },
@@ -45,14 +45,14 @@ const MESSAGES = [
     { time: 162, text: 'Birthday lights are brighter when shared with people who believe in you.', sender: 'Nashon' },
     { time: 168, text: 'Celebrate the wins from the past year and the opportunities that are coming.', sender: 'Nashon' },
     { time: 174, text: 'This message is for the part of you that deserves extra kindness today.', sender: 'Nashon' },
-    { time: 180, text: 'May your day include a memory that you want to keep on repeat.', sender: 'Nashon' },
+    { time: 180, text: 'May your day include a memory that you want to keep on   repeat.', sender: 'Nashon' },
     { time: 186, text: 'Your birthday should feel like the good things you already are, amplified.', sender: 'Nashon' },
     { time: 192, text: 'A simple wish: happy birthday, and may everything feel just a little easier.', sender: 'Nashon' },
     { time: 198, text: 'Celebrate the progress, the comfort, and the people who make life brighter.', sender: 'Nashon' },
-    { time: 204, text: 'There is plenty of time in this song for more warm thoughts and quiet cheer.', sender: 'Nashon' },
-    { time: 210, text: 'The story keeps building. Your smile matters more than perfect timing.', sender: 'Nashon' },
+    { time: 204, text: 'Jabulani❤.', sender: 'Nashon' },
+    { time: 210, text: ' Your smile matters more than perfect timing.', sender: 'Nashon' },
     { time: 216, text: 'This birthday is a moment worth holding close as the year moves forward.', sender: 'Nashon' },
-    { time: 222, text: 'Think of today as a small celebration of all the good you bring into the room.', sender: 'Nashon' },
+    { time: 222, text: 'Think of today as a small celebration of all the good you bring into this room.', sender: 'Nashon' },
     { time: 228, text: 'A birthday wish for calm mornings, calm evenings, and a happy in-between.', sender: 'Nashon' },
     { time: 234, text: 'Not just today, not just on your birthday, but every single day.', sender: 'Nashon' },
     { time: 240, text: 'There are so many reasons to look forward to the year ahead of you.', sender: 'Nashon' },
@@ -71,13 +71,13 @@ const MESSAGES = [
 const CHAPTER_CONTENT = {
 
     ch1: {
-        sender: 'ikayn.fly',
+        sender: 'i_kayn.fly',
         status: 'online',
         profileImage: 'mine/m1.jpg',
-        bottomText: 'A gentle start to a heartfelt journey.',
+        bottomText: 'I beleive it is one hell of a journey that has just begun.',
         memories: [
-            { title: 'The first hello', text: 'That first hello marked the start of a birthday year filled with bright possibilities and steady energy from you.' },
-            { title: 'Late night wish', text: 'Late at night, the birthday wish still stands — happy 22nd birthday, OT. This celebration is long overdue and completely deserved.' }
+            { title: 'The first hello', text: 'Courage to walk boldly through every door the year opens up for you .' },
+            { title: 'Late night wish', text: 'Happy 22nd birthday OT.Let every sunset bring a peaceful close to a day you have lived fully.' }
         ]
     },
     ch2: {
@@ -97,10 +97,10 @@ const CHAPTER_CONTENT = {
         sender: 'Nashkay',
         status: 'sending...',
         profileImage: 'mine/m3.jpg',
-        bottomText: 'Every memory holds a piece of her story.',
+        bottomText: 'Every memory holds a piece of your story.',
         memories: [
-            { title: 'The first adventure', text: 'Every adventure you take this year will be filled with gladness — your brightest birthday chapter yet.' },
-            { title: 'That laugh', text: 'A birthday year filled with your laughter — laughter that lights up every room you walk into.' }
+            { title: 'Adventure Girl', text: 'As you hike through the trails, you carry the spirit of discovery with you.' },
+            { title: 'Queen of smiles', text: 'Where is the lie😁?' }
         ]
     },
     ch4: {
@@ -109,55 +109,46 @@ const CHAPTER_CONTENT = {
         profileImage: 'mine/m4.jpg',
         bottomText: 'Pause and feel the joy in these moments.',
         memories: [
-            { title: 'Moonlit moment', text: 'Moments where your quiet confidence reminds everyone just how far you have come on your birthday journey.' },
-            { title: 'Genuine encouragement', text: 'Your encouragement in that moment showed how naturally uplifting you are — a true birthday gift to everyone around you.' },
-            { title: 'Unexpected surprise', text: 'A small surprise that showed how thoughtful and present you always are, birthday after birthday.' },
-            { title: 'Future plans', text: 'Talking about the road ahead felt like the start of your most exciting birthday chapter yet.' }
+          
+            { title: 'Future plans', text: 'Talking about the road ahead let it feel like the start of your most exciting  chapter yet.' }
         ]
     },
     ch5: {
         sender: 'Ing.',
         status: 'online',
         profileImage: 'mine/m5.jpg',
-        bottomText: 'More memories unfolding just for her.',
+        bottomText: 'Every girl  deserves to feel like a star and I know you are.',
         memories: [
-            { title: 'The quiet day', text: 'A calm birthday moment that showed how much warmth and grace you carry naturally.' },
-            { title: 'Her kindness', text: 'Your kindness has a way of making everyone around you feel seen and valued — especially on your birthday.' }
+            { title: 'The quiet day', text: ' Remember quetness silences noise so don\'t be afraid when everything seems quiet  ' },
+            { title: 'When the sun goes down', text: '  And it is  said if you cry because the sun has gone out of your life ,your tears will prevent you from seeing the beatiful stars.' }
         ]
     },
     ch6: {
         sender: 'Nashon',
         status: 'online',
         profileImage: 'mine/m6.jpg',
-        bottomText: 'Photos speak louder than words right now.',
+        bottomText: 'To the girl i met in momentum continue gaining momentum.',
         memories: [
-            { title: 'Captured smiles', text: 'A birthday photo that captured just how powerful your presence felt that day.' },
-            { title: 'Unexpected laughter', text: 'A burst of birthday laughter that showed how freely you bring joy into any room.' },
-            { title: 'Quiet confidence', text: 'The picture reflected the calm confidence you carry into every birthday and every space.' },
-            { title: 'Bold adventure', text: 'That birthday adventure became one of the most memorable parts of your story this year.' },
-            { title: 'Little details', text: 'The small details you noticed that day are the memories that stay with people longest — a birthday gift in itself.' }
+            
         ]
     },
     ch7: {
         sender: 'Nashkay',
         status: 'typing...',
         profileImage: 'mine/m7.jpg',
-        bottomText: 'The final words before the big moment.',
+        bottomText: 'And lastly jabulani😊.',
         memories: [
-            { title: 'The defining moment', text: 'A birthday moment when everything clicked and your strength was unmistakable to everyone watching.' },
-            { title: 'Meaningful pause', text: 'A still birthday moment that captured exactly who you are and who you are becoming.' }
+            
+            { title: 'Meaningful pause', text: 'I beleive you will become even if I may not be there to tell you that on that day.' }
         ]
     },
     ch8: {
         sender: 'Nashon',
         status: 'online',
         profileImage: 'mine/m8.jpg',
-        bottomText: 'One last look at these beautiful memories.',
+        bottomText: '   I\'ve known you for a quite a short time and am convinced you will become even i may not be there to witness it and tell you so🤗 ',
         memories: [
-            { title: 'Words of celebration', text: 'A thoughtful birthday moment that reminded everyone just how special this milestone is for you.' },
-            { title: 'Quiet strength', text: 'A still moment that spoke volumes about the grounded person you have grown into, birthday after birthday.' },
-            { title: 'Late night reflection', text: 'A late night birthday reflection that showed how deeply you value growth and self-awareness.' },
-            { title: 'Radiant smile', text: 'Your smile at the end of your birthday made the entire celebration feel complete.' },
+          
             { title: 'A hopeful note', text: 'A hopeful send-off into the birthday year ahead — full of confidence, clarity, and purpose for you.' }
         ]
     },
@@ -193,7 +184,7 @@ const MEMORY_IMAGES = [
     { src: 'joan/jo20.jpg', tag: 'Let every sunsrise shining on you remind you purpose.Born to win.' },
     { src: 'joan/jo21.jpg', tag: 'The girl is working to transform lives.' },
     { src: 'joan/jo22.jpg', tag: 'A confident, joyful moment worth remembering.' },
-    { src: 'joan/jo23.jpg', tag: 'Ever wondered why somebody would be this serious on an a finalists Sunday?' },
+    { src: 'joan/jo23.jpg', tag: 'Ever wondered why somebody would be this serious on an a random Sunday?' },
     { src: 'joan/jo24.jpg', tag: 'May Your light shines brighter and brighter to the perfect day.' },
     { src: 'joan/jo25.jpg', tag: 'A beautiful memories hope they  stay with you forever.' },
     { src: 'joan/jo26.jpg', tag: 'Remember to stay happy😊.' },
@@ -208,6 +199,7 @@ let currentBehavior = null;
 let displayedMessages = new Set();
 let collageImagesInterval = null;
 let lyricsSourceHtml = '';
+let endingLyricsSourceHtml = '';
 let sidebarLyricsInterval = null;
 let overlayLyricsInterval = null;
 let textScrollInterval = null;
@@ -417,7 +409,13 @@ function addLyricsOverlay(chapterId, speed, offset) {
     
     const scrollDiv = document.createElement('div');
     scrollDiv.className = 'lyrics-scroll';
-    scrollDiv.innerHTML = lyricsSourceHtml;
+    
+    // Use ending lyrics for chapters 7 and 8
+    if (chapterId === 'ch7' || chapterId === 'ch8') {
+        scrollDiv.innerHTML = endingLyricsSourceHtml;
+    } else {
+        scrollDiv.innerHTML = lyricsSourceHtml;
+    }
     
     lyricsOverlay.appendChild(scrollDiv);
     
@@ -476,7 +474,7 @@ function setupFinaleChapter(chapterId) {
         <div class="finale-content">
             <h1 class="finale-title">Happy Birthday</h1>
             <p class="finale-subtitle">DAKTARI M.J/O.T</p>
-            <P class="finale-description">.</p>Lebe! Liebe! Lache!</p>
+            <p class="finale-description">Lebe! Liebe! Lache!</p>
             <div class="finale-hearts">❤️ 💕 ✨ 💕 ❤️</div>
             <p class="finale-message">Mögen alle deine Wünsche in Erfüllung gehen!</p>
         </div>
@@ -486,7 +484,10 @@ function setupFinaleChapter(chapterId) {
         chat.appendChild(finaleHtml);
     }
     
-    removeLyricsOverlay(chapterId);
+    // Chapter 9 uses main lyrics (or no lyrics - remove this if you want no lyrics)
+    // addLyricsOverlay(chapterId, TIMING[chapterId].lyricsSpeed, TIMING[chapterId].lyricsOffset);
+    // Commented out - Chapter 9 has no lyrics
+    
     stopCollageImages();
 }
 
@@ -513,7 +514,7 @@ function updateChapterContent(chapterId, timingInfo) {
     if (profilePhoto) profilePhoto.src = config.profileImage || 'mine/m1.jpg';
     if (profileName) profileName.textContent = config.sender || 'Nashon';
     if (profileStatus) profileStatus.textContent = config.status || 'online';
-    if (bottomBar) bottomBar.textContent = '';
+    if (bottomBar) bottomBar.textContent = config.bottomText || '';
 
     if (timingInfo.behavior === 'A') {
         // Sidebar + Chat layout with cinematic card display
@@ -523,7 +524,16 @@ function updateChapterContent(chapterId, timingInfo) {
             chat.style.minWidth = '600px';
         }
         if (sidebarContent) {
-            sidebarContent.innerHTML = `<div class="sidebar-lyrics-title">Lyrics</div><div class="lyrics-scroll">${lyricsSourceHtml}</div>`;
+            sidebarContent.innerHTML = `<div class="sidebar-lyrics-title">Lyrics</div><div class="lyrics-scroll">`;
+            
+            // Use ending lyrics for chapters 7 and 8
+            if (chapterId === 'ch7' || chapterId === 'ch8') {
+                sidebarContent.innerHTML += endingLyricsSourceHtml;
+            } else {
+                sidebarContent.innerHTML += lyricsSourceHtml;
+            }
+            sidebarContent.innerHTML += `</div>`;
+            
             setTimeout(() => {
                 startSidebarLyricsScroll(sidebarContent, timingInfo.lyricsSpeed, timingInfo.lyricsOffset);
             }, 800);
@@ -670,14 +680,14 @@ function displayMessage(msg) {
         `;
         msgDiv.classList.remove('message-enter');
 
-        // Show text for 4s, then fade out
+        // Show text for 7s, then fade out
         currentMessageTimeout = setTimeout(() => {
             msgDiv.classList.add('message-exit');
             currentMessageTimeout = setTimeout(() => {
                 msgDiv.remove();
                 currentMessageTimeout = null;
-            }, 500); // Exit animation duration
-        }, 4000);
+            }, 500);
+        }, 7000);
     }, 1500);
 }
 
@@ -707,7 +717,7 @@ function displayCard(cardHtml) {
         currentCardTimeout = setTimeout(() => {
             card.remove();
             currentCardTimeout = null;
-        }, 500); // Exit animation duration
+        }, 500);
     }, 4000);
 }
 
@@ -716,10 +726,10 @@ function startMemoryCardCycle(chapterId, chapterDuration) {
     const birthdayCardHtml = buildBirthdayHtml();
     const memoryCards = config.memories || [];
     
-    const totalCards = 1 + memoryCards.length; // birthday + memory cards
+    const totalCards = 1 + memoryCards.length;
     if (totalCards === 0) return;
     
-    const intervalPerCard = (chapterDuration * 1000) / totalCards; // Convert to ms
+    const intervalPerCard = (chapterDuration * 1000) / totalCards;
     let cardIndex = 0;
     
     // Show birthday card first
@@ -742,7 +752,6 @@ function startMemoryCardCycle(chapterId, chapterDuration) {
             displayCard(memoryCardHtml);
             cardIndex++;
         } else {
-            // Cycle complete
             if (memoryCardCycleInterval) {
                 clearInterval(memoryCardCycleInterval);
                 memoryCardCycleInterval = null;
@@ -759,6 +768,14 @@ function loadLyricsSource() {
     }
 }
 
+function loadEndingLyricsSource() {
+    const sourceElement = document.getElementById('ending-lyrics-source');
+    if (sourceElement) {
+        const lyricsElement = sourceElement.querySelector('#ending-lyrics');
+        endingLyricsSourceHtml = lyricsElement ? lyricsElement.innerHTML : sourceElement.innerHTML;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const beginBtn = document.getElementById('begin-btn');
     if (beginBtn) {
@@ -768,6 +785,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.petals').forEach(generatePetals);
     document.querySelectorAll('.hearts').forEach(generateHearts);
     loadLyricsSource();
+    loadEndingLyricsSource();
     
     // Hide lyrics controls from view
     const controls = document.getElementById('lyrics-controls');
