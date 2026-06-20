@@ -146,7 +146,7 @@ const CHAPTER_CONTENT = {
         sender: 'Nashon',
         status: 'online',
         profileImage: 'mine/m8.jpg',
-        bottomText: '   I\'ve known you for a quite a short time and am convinced you will become even i may not be there to witness it and tell you so🤗 ',
+        bottomText: '   I\'ve known you for a quite a short time and am convinced you will become even if i may not be there to witness it and tell you so🤗 ',
         memories: [
           
             { title: 'A hopeful note', text: 'A hopeful send-off into the birthday year ahead — full of confidence, clarity, and purpose for you.' }
