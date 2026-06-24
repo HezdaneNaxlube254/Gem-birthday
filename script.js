@@ -189,7 +189,8 @@ const MEMORY_IMAGES = [
     { src: 'joan/jo25.jpg', tag: 'A beautiful memories hope they  stay with you forever.' },
     { src: 'joan/jo26.jpg', tag: 'Remember to stay happy😊.' },
     { src: 'joan/jo27.jpg', tag: 'Malombo😂' },
-    { src: 'joan/jo28.jpg', tag: '😃' }
+    { src: 'joan/jo28.jpg', tag: '😃' },
+    {src:'joan/jo28.jpeg', tag:'Continue gaining momentum'}
 ];
 
 let musicStarted = false;
