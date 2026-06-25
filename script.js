@@ -172,7 +172,7 @@ const MEMORY_IMAGES = [
     { src: 'joan/jo8.jpg', tag: 'Keep smiling gem.' },
     { src: 'joan/jo9.jpg', tag: 'Don\'t forget your moments, let them replay in your head.' },
     { src: 'joan/jo10.jpg', tag: 'Queen of smiles init.' },
-    { src: 'joan/jo11.jpg', tag: 'You slew lions you can face Samson.' },
+    { src: 'joan/jo11.jpg', tag: 'You slew lions you can face Goliath.' },
     { src: 'joan/jo12.jpg', tag: 'A beautiful soul captured in a single frame.' },
     { src: 'joan/jo13.jpg', tag: 'Every photo holds a piece of your journey so far.' },
     { src: 'joan/jo14.jpg', tag: 'That smile belongs on a billboard.' },
