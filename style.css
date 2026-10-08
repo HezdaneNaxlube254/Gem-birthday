@@ -1053,8 +1053,7 @@ h1, h2 { font-family: 'Playfair Display', serif; font-weight: 700; }
     }
 }
 /* ============================================================
-   SUN — final version.
-   Big yellow disc that rises behind the hills, half visible.
+   SUN — final. Defined disc, radiating rays, half-risen look.
    ============================================================ */
 
 .anime-stage .sun,
@@ -1063,32 +1062,73 @@ h1, h2 { font-family: 'Playfair Display', serif; font-weight: 700; }
     right: auto !important;
     top: auto !important;
     bottom: 22% !important;
-    margin-left: -17vh !important;
-    width: 34vh !important;
-    height: 34vh !important;
+    margin-left: -15vh !important;
+    width: 30vh !important;
+    height: 30vh !important;
     border-radius: 50% !important;
-    filter: blur(0.8px) !important;
+    filter: none !important;
     transform: none !important;
     z-index: 1 !important;
     animation: sunRise 22s ease-in-out infinite alternate !important;
+    /* Tighter disc — bright core, crisp edge, no big halo ring */
     background: radial-gradient(circle at 50% 50%,
-        #fffbe6 0%,
-        #fff0a0 12%,
-        #ffd878 26%,
-        #ffbb60 42%,
-        rgba(255, 170, 90, 0.35) 62%,
-        rgba(255, 160, 90, 0) 100%) !important;
+        #fffef0 0%,
+        #fff4b0 16%,
+        #ffdc80 34%,
+        #ffc868 48%,
+        rgba(255, 190, 110, 0.35) 55%,
+        rgba(255, 180, 100, 0) 68%) !important;
 }
 
 .anime-stage .sun.sr2 {
-    width: 40vh !important;
-    height: 40vh !important;
-    margin-left: -20vh !important;
+    width: 36vh !important;
+    height: 36vh !important;
+    margin-left: -18vh !important;
 }
 
+/* --- Rotating sun rays (via ::before) --- */
+.anime-stage .sun::before,
+.anime-stage .sun.sr2::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 240%;
+    height: 240%;
+    transform: translate(-50%, -50%);
+    background: repeating-conic-gradient(
+        from 0deg,
+        rgba(255, 225, 150, 0.55) 0deg 2deg,
+        transparent 2deg 14deg
+    );
+    -webkit-mask: radial-gradient(circle,
+        transparent 34%,
+        rgba(0,0,0,0.35) 42%,
+        #000 52%,
+        #000 68%,
+        rgba(0,0,0,0.35) 80%,
+        transparent 92%);
+    mask: radial-gradient(circle,
+        transparent 34%,
+        rgba(0,0,0,0.35) 42%,
+        #000 52%,
+        #000 68%,
+        rgba(0,0,0,0.35) 80%,
+        transparent 92%);
+    animation: sunRaysRotate 160s linear infinite;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+@keyframes sunRaysRotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* --- Slow rise behind the hills --- */
 @keyframes sunRise {
-    0%   { bottom: 20%; }   /* mostly hidden behind the hills */
-    100% { bottom: 32%; }   /* risen — more of it showing */
+    0%   { bottom: 20%; }
+    100% { bottom: 32%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1096,5 +1136,9 @@ h1, h2 { font-family: 'Playfair Display', serif; font-weight: 700; }
     .anime-stage .sun.sr2 {
         animation: none !important;
         bottom: 26% !important;
+    }
+    .anime-stage .sun::before,
+    .anime-stage .sun.sr2::before {
+        animation: none !important;
     }
 }
