@@ -111,10 +111,10 @@
             As long as I'm alive<br>
             I am the price<br>
         </div>
-        </div>
-<!-- NEW: Ending lyrics section for Chapters 8 & 9 -->
-<div id="ending-lyrics-source" class="hidden">
-    <div id="ending-lyrics">
+    </div>
+
+    <div id="ending-lyrics-source" class="hidden">
+        <div id="ending-lyrics">
             Kata mudho osiko chieng' nyaka rieny<br>
             Past the darkest night, the sun will rise again<br>
             Things will get better in the end<br>
@@ -154,23 +154,20 @@
         </div>
     </div>
 
-<!-- Welcome Screen -->
-<section id="welcome" class="welcome-screen active">
-    <div class="welcome-content">
-        <h1 id="welcome-title">🎈 Happy Birthday Joan 💝</h1>
-        <p id="welcome-subtitle">A timeless celebration crafted with love just for you.</p>
-        <p id="welcome-message">May this special day bring you endless joy, cherished memories, and all the happiness your heart deserves. You are truly extraordinary. 🎉</p>
-        <button id="begin-btn" class="begin-btn">Let's Begin</button>
-        <p id="welcome-footer">Wishing you a year filled with love, laughter, and beautiful moments. 🥰</p>
-        <p id="welcome-signature">Nachträglich alles Gute zum Geburtstag! 🌸</p>
-    </div>
-</section>
+    <section id="welcome" class="welcome-screen active">
+        <div class="welcome-content">
+            <h1 id="welcome-title">🎈 Happy Birthday Joan 💝</h1>
+            <p id="welcome-subtitle">A timeless celebration crafted with love just for you.</p>
+            <p id="welcome-message">May this special day bring you endless joy, cherished memories, and all the happiness your heart deserves. You are truly extraordinary. 🎉</p>
+            <button id="begin-btn" class="begin-btn">Let's Begin</button>
+            <p id="welcome-footer">Wishing you a year filled with love, laughter, and beautiful moments. 🥰</p>
+            <p id="welcome-signature">Nachträglich alles Gute zum Geburtstag! 🌸</p>
+        </div>
+    </section>
 
-    <!-- Chapter structure with WhatsApp-style layout -->
     <section id="chapter1" class="chapter behavior-a">
         <div class="petals"></div>
         <div class="vignette"></div>
-        <div class="image-splash"></div>
         <div class="chapter-frame">
             <aside class="sidebar">
                 <div class="sidebar-header"><span class="sidebar-title">Lyrics</span></div>
@@ -197,7 +194,7 @@
     <section id="chapter2" class="chapter behavior-b">
         <div class="petals"></div>
         <div class="vignette"></div>
-        <div class="image-splash"></div>
+        <div class="anime-stage" data-chapter="ch2"></div>
         <div class="chapter-frame">
             <aside class="sidebar">
                 <div class="sidebar-header"><span class="sidebar-title">Notes</span></div>
@@ -224,7 +221,6 @@
     <section id="chapter3" class="chapter behavior-a">
         <div class="petals"></div>
         <div class="vignette"></div>
-        <div class="image-splash"></div>
         <div class="chapter-frame">
             <aside class="sidebar">
                 <div class="sidebar-header"><span class="sidebar-title">Lyrics</span></div>
@@ -251,7 +247,7 @@
     <section id="chapter4" class="chapter behavior-b">
         <div class="petals"></div>
         <div class="vignette"></div>
-        <div class="image-splash"></div>
+        <div class="anime-stage" data-chapter="ch4"></div>
         <div class="chapter-frame">
             <aside class="sidebar">
                 <div class="sidebar-header"><span class="sidebar-title">Notes</span></div>
@@ -278,7 +274,6 @@
     <section id="chapter5" class="chapter behavior-a">
         <div class="petals"></div>
         <div class="vignette"></div>
-        <div class="image-splash"></div>
         <div class="chapter-frame">
             <aside class="sidebar">
                 <div class="sidebar-header"><span class="sidebar-title">Lyrics</span></div>
@@ -305,7 +300,7 @@
     <section id="chapter6" class="chapter behavior-b">
         <div class="petals"></div>
         <div class="vignette"></div>
-        <div class="image-splash"></div>
+        <div class="anime-stage" data-chapter="ch6"></div>
         <div class="chapter-frame">
             <aside class="sidebar">
                 <div class="sidebar-header"><span class="sidebar-title">Notes</span></div>
@@ -332,7 +327,6 @@
     <section id="chapter7" class="chapter behavior-a">
         <div class="petals"></div>
         <div class="vignette"></div>
-        <div class="image-splash"></div>
         <div class="chapter-frame">
             <aside class="sidebar">
                 <div class="sidebar-header"><span class="sidebar-title">Lyrics</span></div>
@@ -359,7 +353,7 @@
     <section id="chapter8" class="chapter behavior-b">
         <div class="petals"></div>
         <div class="vignette"></div>
-        <div class="image-splash"></div>
+        <div class="anime-stage" data-chapter="ch8"></div>
         <div class="chapter-frame">
             <aside class="sidebar">
                 <div class="sidebar-header"><span class="sidebar-title">Notes</span></div>
@@ -383,9 +377,10 @@
         </div>
     </section>
 
-        <section id="chapter9" class="chapter behavior-c">
+    <section id="chapter9" class="chapter behavior-c">
         <div class="petals"></div>
         <div class="vignette"></div>
+        <div class="anime-stage" data-chapter="ch9"></div>
         <div class="chapter-frame">
             <aside class="sidebar">
                 <div class="sidebar-header"><span class="sidebar-title">Finale</span></div>
@@ -408,8 +403,8 @@
             </main>
         </div>
     </section>
-        
-    </div>
+
     <script src="script.js"></script>
+    <script src="anime-scenes.js"></script>
 </body>
 </html>

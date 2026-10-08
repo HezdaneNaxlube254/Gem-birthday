@@ -14,7 +14,6 @@ const PLAYBACK_RATE = 0.9;
 const TOTAL_DURATION = 315;
 const IMAGE_DURATION = 5;
 
-// Chat messages that appear at specific times
 const MESSAGES = [
     { time: 5, text: 'Happy Birthday! 🎂 Rafiki.', sender: 'n.k' },
     { time: 11, text: 'Today is all about celebrating you and the  bright things you bring to the world.', sender: 'Nashon' },
@@ -69,11 +68,8 @@ const MESSAGES = [
 ];
 
 const CHAPTER_CONTENT = {
-
     ch1: {
-        sender: 'i_kayn.fly',
-        status: 'online',
-        profileImage: 'mine/m1.jpg',
+        sender: 'i_kayn.fly', status: 'online', profileImage: 'mine/m1.jpg',
         bottomText: 'I beleive it is one hell of a journey that has just begun.',
         memories: [
             { title: 'The first hello', text: 'Courage to walk boldly through every door the year opens up for you .' },
@@ -81,9 +77,7 @@ const CHAPTER_CONTENT = {
         ]
     },
     ch2: {
-        sender: '~',
-        status: 'online',
-        profileImage: 'mine/m2.jpg',
+        sender: '~', status: 'online', profileImage: 'mine/m2.jpg',
         bottomText: 'Let these memories warm your heart.',
         memories: [
             { title: 'Guided mornings', text: 'Every birthday morning, you arrive with clarity and purpose.' },
@@ -94,9 +88,7 @@ const CHAPTER_CONTENT = {
         ]
     },
     ch3: {
-        sender: 'Nashkay',
-        status: 'sending...',
-        profileImage: 'mine/m3.jpg',
+        sender: 'Nashkay', status: 'sending...', profileImage: 'mine/m3.jpg',
         bottomText: 'Every memory holds a piece of your story.',
         memories: [
             { title: 'Adventure Girl', text: 'As you hike through the trails, you carry the spirit of discovery with you.' },
@@ -104,19 +96,14 @@ const CHAPTER_CONTENT = {
         ]
     },
     ch4: {
-        sender: 'N.k',
-        status: 'online',
-        profileImage: 'mine/m4.jpg',
+        sender: 'N.k', status: 'online', profileImage: 'mine/m4.jpg',
         bottomText: 'Pause and feel the joy in these moments.',
         memories: [
-          
             { title: 'Future plans', text: 'Talking about the road ahead let it feel like the start of your most exciting  chapter yet.' }
         ]
     },
     ch5: {
-        sender: 'Ing.',
-        status: 'online',
-        profileImage: 'mine/m5.jpg',
+        sender: 'Ing.', status: 'online', profileImage: 'mine/m5.jpg',
         bottomText: 'Every girl  deserves to feel like a star and I know you are.',
         memories: [
             { title: 'The quiet day', text: ' Remember quetness silences noise so don\'t be afraid when everything seems quiet  ' },
@@ -124,39 +111,26 @@ const CHAPTER_CONTENT = {
         ]
     },
     ch6: {
-        sender: 'Nashon',
-        status: 'online',
-        profileImage: 'mine/m6.jpg',
+        sender: 'Nashon', status: 'online', profileImage: 'mine/m6.jpg',
         bottomText: 'To the girl i met in momentum continue gaining momentum.',
-        memories: [
-            
-        ]
+        memories: []
     },
     ch7: {
-        sender: 'Nashkay',
-        status: 'typing...',
-        profileImage: 'mine/m7.jpg',
+        sender: 'Nashkay', status: 'typing...', profileImage: 'mine/m7.jpg',
         bottomText: 'And lastly jabulani😊.',
         memories: [
-            
             { title: 'Meaningful pause', text: 'I beleive you will become even if I may not be there to tell you that on that day.' }
         ]
     },
     ch8: {
-        sender: 'Nashon',
-        status: 'online',
-        profileImage: 'mine/m8.jpg',
+        sender: 'Nashon', status: 'online', profileImage: 'mine/m8.jpg',
         bottomText: '   I\'ve known you for a quite a short time and am convinced you will become even if i may not be there to witness it and tell you so🤗 ',
         memories: [
-          
             { title: 'A hopeful note', text: 'A hopeful send-off into the birthday year ahead — full of confidence, clarity, and purpose for you.' }
         ]
     },
-
     ch9: {
-        sender: 'Nashon',
-        status: 'online',
-        profileImage: 'mine/m1.jpg',
+        sender: 'Nashon', status: 'online', profileImage: 'mine/m1.jpg',
         bottomText: '🌟 The grand finale 🌟'
     }
 };
@@ -177,7 +151,7 @@ const MEMORY_IMAGES = [
     { src: 'joan/jo13.jpg', tag: 'Every photo holds a piece of your journey so far.' },
     { src: 'joan/jo14.jpg', tag: 'That smile belongs on a billboard.' },
     { src: 'joan/jo15.jpg', tag: 'Hope moments like these make life worth living.' },
-    { src: 'joan/jo16.jpg', tag: 'Strong indeed, once claimed she can\'t cry😁 .'},
+    { src: 'joan/jo16.jpg', tag: 'Strong indeed, once claimed she can\'t cry😁 .' },
     { src: 'joan/jo17.jpg', tag: 'To more Moments  in time to be forever cherished.' },
     { src: 'joan/jo18.jpg', tag: 'Happy birthday, Gem!' },
     { src: 'joan/jo19.jpg', tag: 'Every glance, every smile, pure magic.' },
@@ -190,7 +164,7 @@ const MEMORY_IMAGES = [
     { src: 'joan/jo26.jpg', tag: 'Remember to stay happy😊.' },
     { src: 'joan/jo27.jpg', tag: 'Malombo😂' },
     { src: 'joan/jo28.jpg', tag: '😃' },
-    {src:'joan/jo28.jpeg', tag:'Continue gaining momentum'}
+    { src: 'joan/jo28.jpeg', tag: 'Continue gaining momentum' }
 ];
 
 let musicStarted = false;
@@ -208,13 +182,8 @@ let memoryCardCycleInterval = null;
 let currentMessageTimeout = null;
 let currentCardTimeout = null;
 
-function getSectionId(chapterId) {
-    return 'chapter' + chapterId.slice(2);
-}
-
-function getChapterConfig(chapterId) {
-    return CHAPTER_CONTENT[chapterId] || {};
-}
+function getSectionId(chapterId) { return 'chapter' + chapterId.slice(2); }
+function getChapterConfig(chapterId) { return CHAPTER_CONTENT[chapterId] || {}; }
 
 function buildBirthdayHtml() {
     return `
@@ -224,11 +193,8 @@ function buildBirthdayHtml() {
         </div>
     `;
 }
-
 function buildMemoryHtml(memories) {
-    if (!memories || !memories.length) {
-        return '';
-    }
+    if (!memories || !memories.length) return '';
     return memories.map(memory => `
         <div class="memory-card">
             <strong>${memory.title}</strong>
@@ -239,114 +205,60 @@ function buildMemoryHtml(memories) {
 
 function startAutoScroll(container, speed, offset, shouldLoop = false) {
     if (!container) return null;
-    
-    if (typeof offset === 'number' && offset >= 0) {
-        container.scrollTop = offset;
-    }
-    
+    if (typeof offset === 'number' && offset >= 0) container.scrollTop = offset;
     const scrollStep = 1;
     const intervalSpeed = speed || 30;
     let stuckTicks = 0;
-    
     const intervalId = setInterval(() => {
         const maxScroll = container.scrollHeight - container.clientHeight;
         if (maxScroll <= 0) {
             stuckTicks += 1;
             if (stuckTicks > 10) {
                 clearInterval(intervalId);
-                setTimeout(() => {
-                    startAutoScroll(container, speed, offset, shouldLoop);
-                }, 500);
+                setTimeout(() => { startAutoScroll(container, speed, offset, shouldLoop); }, 500);
             }
             return;
         }
         stuckTicks = 0;
-        
-        if (container.scrollTop < maxScroll) {
-            container.scrollTop += scrollStep;
-        } else {
-            clearInterval(intervalId);
-        }
+        if (container.scrollTop < maxScroll) container.scrollTop += scrollStep;
+        else clearInterval(intervalId);
     }, intervalSpeed);
-
     return intervalId;
 }
 
-function stopInterval(intervalVar) {
-    if (intervalVar) {
-        clearInterval(intervalVar);
-    }
-}
+function stopInterval(intervalVar) { if (intervalVar) clearInterval(intervalVar); }
 
 function startSidebarLyricsScroll(container, speed, offset) {
     if (!container || sidebarLyricsInterval !== null) return;
-    sidebarLyricsInterval = startAutoScroll(container, speed, offset, false, newId => {
-        sidebarLyricsInterval = newId;
-    });
+    sidebarLyricsInterval = startAutoScroll(container, speed, offset, false);
 }
-
 function stopSidebarLyricsScroll() {
-    if (sidebarLyricsInterval) {
-        clearInterval(sidebarLyricsInterval);
-        sidebarLyricsInterval = null;
-    }
+    if (sidebarLyricsInterval) { clearInterval(sidebarLyricsInterval); sidebarLyricsInterval = null; }
 }
-
 function startOverlayLyricsScroll(container, speed, offset) {
-    stopInterval(overlayLyricsInterval);
-    overlayLyricsInterval = null;
+    stopInterval(overlayLyricsInterval); overlayLyricsInterval = null;
     if (!container) return;
-    overlayLyricsInterval = startAutoScroll(container, speed, offset, false, newId => {
-        overlayLyricsInterval = newId;
-    });
+    overlayLyricsInterval = startAutoScroll(container, speed, offset, false);
 }
-
 function stopOverlayLyricsScroll() {
-    if (overlayLyricsInterval) {
-        clearInterval(overlayLyricsInterval);
-        overlayLyricsInterval = null;
-    }
+    if (overlayLyricsInterval) { clearInterval(overlayLyricsInterval); overlayLyricsInterval = null; }
 }
-
 function startTextScroll(container, speed) {
-    stopInterval(textScrollInterval);
-    textScrollInterval = null;
+    stopInterval(textScrollInterval); textScrollInterval = null;
     if (!container) return;
-    textScrollInterval = startAutoScroll(container, speed, 0, true, newId => {
-        textScrollInterval = newId;
-    });
+    textScrollInterval = startAutoScroll(container, speed, 0, true);
 }
-
 function stopTextScroll() {
-    if (textScrollInterval) {
-        clearInterval(textScrollInterval);
-        textScrollInterval = null;
-    }
+    if (textScrollInterval) { clearInterval(textScrollInterval); textScrollInterval = null; }
 }
-
 function stopAllScrolling() {
-    stopSidebarLyricsScroll();
-    stopOverlayLyricsScroll();
-    stopTextScroll();
-    if (memoryCardCycleInterval) {
-        clearInterval(memoryCardCycleInterval);
-        memoryCardCycleInterval = null;
-    }
-    if (currentMessageTimeout) {
-        clearTimeout(currentMessageTimeout);
-        currentMessageTimeout = null;
-    }
-    if (currentCardTimeout) {
-        clearTimeout(currentCardTimeout);
-        currentCardTimeout = null;
-    }
+    stopSidebarLyricsScroll(); stopOverlayLyricsScroll(); stopTextScroll();
+    if (memoryCardCycleInterval) { clearInterval(memoryCardCycleInterval); memoryCardCycleInterval = null; }
+    if (currentMessageTimeout) { clearTimeout(currentMessageTimeout); currentMessageTimeout = null; }
+    if (currentCardTimeout) { clearTimeout(currentCardTimeout); currentCardTimeout = null; }
 }
-
 function stopCollageImages() {
-    if (collageImagesInterval) {
-        clearInterval(collageImagesInterval);
-        collageImagesInterval = null;
-    }
+    if (collageImagesInterval) { clearInterval(collageImagesInterval); collageImagesInterval = null; }
 }
 
 function startCollageImages(chapterId) {
@@ -354,42 +266,30 @@ function startCollageImages(chapterId) {
     const sectionId = getSectionId(chapterId);
     const section = document.getElementById(sectionId);
     if (!section) return;
-
     const collageContainer = section.querySelector('.collage-container');
     if (!collageContainer) return;
-
     function updateCollage() {
         collageContainer.innerHTML = '';
         const shuffled = [...MEMORY_IMAGES].sort(() => Math.random() - 0.5);
         const selected = shuffled.slice(0, 3);
-        
         selected.forEach((img, index) => {
             const floatDiv = document.createElement('div');
             floatDiv.className = 'floating-image';
-            
             const positions = [
                 { top: '25%', left: '30%' },
                 { top: '45%', left: '55%' },
                 { top: '35%', left: '20%' }
             ];
-            
             const pos = positions[index] || { top: '40%', left: '40%' };
             const rotate = -8 + Math.random() * 16;
-            
             floatDiv.style.top = pos.top;
             floatDiv.style.left = pos.left;
             floatDiv.style.setProperty('--rotate', rotate + 'deg');
             floatDiv.style.animationDelay = (index * 0.7) + 's';
-            
-            floatDiv.innerHTML = `
-                <img src="${img.src}" alt="${img.tag}">
-                <div class="floating-tag">${img.tag}</div>
-            `;
-            
+            floatDiv.innerHTML = `<img src="${img.src}" alt="${img.tag}"><div class="floating-tag">${img.tag}</div>`;
             collageContainer.appendChild(floatDiv);
         });
     }
-
     updateCollage();
     collageImagesInterval = setInterval(updateCollage, IMAGE_DURATION * 1000);
 }
@@ -398,50 +298,29 @@ function addLyricsOverlay(chapterId, speed, offset) {
     const sectionId = getSectionId(chapterId);
     const section = document.getElementById(sectionId);
     if (!section) return;
-
     const existingOverlay = section.querySelector('.lyrics-overlay');
-    if (existingOverlay) {
-        existingOverlay.remove();
-    }
+    if (existingOverlay) existingOverlay.remove();
     stopOverlayLyricsScroll();
-
     const lyricsOverlay = document.createElement('div');
     lyricsOverlay.className = 'lyrics-overlay';
-    
     const scrollDiv = document.createElement('div');
     scrollDiv.className = 'lyrics-scroll';
-    
-    // Use ending lyrics for chapters 7 and 8
-    if (chapterId === 'ch7' || chapterId === 'ch8') {
-        scrollDiv.innerHTML = endingLyricsSourceHtml;
-    } else {
-        scrollDiv.innerHTML = lyricsSourceHtml;
-    }
-    
+    if (chapterId === 'ch7' || chapterId === 'ch8') scrollDiv.innerHTML = endingLyricsSourceHtml;
+    else scrollDiv.innerHTML = lyricsSourceHtml;
     lyricsOverlay.appendChild(scrollDiv);
-    
     const chatArea = section.querySelector('.chat-area');
-    if (chatArea) {
-        chatArea.appendChild(lyricsOverlay);
-    }
-    
+    if (chatArea) chatArea.appendChild(lyricsOverlay);
     setTimeout(() => {
         const scrollContainer = lyricsOverlay.querySelector('.lyrics-scroll');
-        if (scrollContainer) {
-            startOverlayLyricsScroll(scrollContainer, speed, offset);
-        }
+        if (scrollContainer) startOverlayLyricsScroll(scrollContainer, speed, offset);
     }, 200);
 }
-
 function removeLyricsOverlay(chapterId) {
     const sectionId = getSectionId(chapterId);
     const section = document.getElementById(sectionId);
     if (!section) return;
-
     const lyricsOverlay = section.querySelector('.lyrics-overlay');
-    if (lyricsOverlay) {
-        lyricsOverlay.remove();
-    }
+    if (lyricsOverlay) lyricsOverlay.remove();
     stopOverlayLyricsScroll();
 }
 
@@ -449,24 +328,16 @@ function setupFinaleChapter(chapterId) {
     const sectionId = getSectionId(chapterId);
     const section = document.getElementById(sectionId);
     if (!section) return;
-
-    // Hide sidebar, show full screen
     const sidebar = section.querySelector('.sidebar');
     const chat = section.querySelector('.chat-area');
     const chatContent = section.querySelector('.chat-content');
     const collageContainer = section.querySelector('.collage-container');
     const bottomBar = section.querySelector('.bottom-bar');
-    
     if (sidebar) sidebar.style.display = 'none';
-    if (chat) {
-        chat.style.width = '100%';
-        chat.style.minWidth = '100%';
-    }
+    if (chat) { chat.style.width = '100%'; chat.style.minWidth = '100%'; }
     if (chatContent) chatContent.innerHTML = '';
     if (collageContainer) collageContainer.innerHTML = '';
     if (bottomBar) bottomBar.textContent = '🌟 With love, Nashkay 🌟';
-    
-    // Add finale background and text
     const finaleHtml = document.createElement('div');
     finaleHtml.className = 'finale-container';
     finaleHtml.innerHTML = `
@@ -480,15 +351,7 @@ function setupFinaleChapter(chapterId) {
             <p class="finale-message">Mögen alle deine Wünsche in Erfüllung gehen!</p>
         </div>
     `;
-    
-    if (chat) {
-        chat.appendChild(finaleHtml);
-    }
-    
-    // Chapter 9 uses main lyrics (or no lyrics - remove this if you want no lyrics)
-    // addLyricsOverlay(chapterId, TIMING[chapterId].lyricsSpeed, TIMING[chapterId].lyricsOffset);
-    // Commented out - Chapter 9 has no lyrics
-    
+    if (chat) chat.appendChild(finaleHtml);
     stopCollageImages();
 }
 
@@ -496,11 +359,8 @@ function updateChapterContent(chapterId, timingInfo) {
     const sectionId = getSectionId(chapterId);
     const section = document.getElementById(sectionId);
     if (!section) return;
-
-    // Remove existing finale if switching away
     const existingFinale = section.querySelector('.finale-container');
     if (existingFinale) existingFinale.remove();
-
     const sidebar = section.querySelector('.sidebar');
     const chat = section.querySelector('.chat-area');
     const sidebarContent = section.querySelector('.sidebar-content');
@@ -510,7 +370,6 @@ function updateChapterContent(chapterId, timingInfo) {
     const profileStatus = section.querySelector('.profile-status');
     const bottomBar = section.querySelector('.bottom-bar');
     const collageContainer = section.querySelector('.collage-container');
-
     const config = getChapterConfig(chapterId);
     if (profilePhoto) profilePhoto.src = config.profileImage || 'mine/m1.jpg';
     if (profileName) profileName.textContent = config.sender || 'Nashon';
@@ -518,30 +377,17 @@ function updateChapterContent(chapterId, timingInfo) {
     if (bottomBar) bottomBar.textContent = config.bottomText || '';
 
     if (timingInfo.behavior === 'A') {
-        // Sidebar + Chat layout with cinematic card display
         if (sidebar) sidebar.style.display = 'flex';
-        if (chat) {
-            chat.style.width = '75%';
-            chat.style.minWidth = '600px';
-        }
+        if (chat) { chat.style.width = '75%'; chat.style.minWidth = '600px'; }
         if (sidebarContent) {
             sidebarContent.innerHTML = `<div class="sidebar-lyrics-title">Lyrics</div><div class="lyrics-scroll">`;
-            
-            // Use ending lyrics for chapters 7 and 8
-            if (chapterId === 'ch7' || chapterId === 'ch8') {
-                sidebarContent.innerHTML += endingLyricsSourceHtml;
-            } else {
-                sidebarContent.innerHTML += lyricsSourceHtml;
-            }
+            if (chapterId === 'ch7' || chapterId === 'ch8') sidebarContent.innerHTML += endingLyricsSourceHtml;
+            else sidebarContent.innerHTML += lyricsSourceHtml;
             sidebarContent.innerHTML += `</div>`;
-            
-            setTimeout(() => {
-                startSidebarLyricsScroll(sidebarContent, timingInfo.lyricsSpeed, timingInfo.lyricsOffset);
-            }, 800);
+            setTimeout(() => { startSidebarLyricsScroll(sidebarContent, timingInfo.lyricsSpeed, timingInfo.lyricsOffset); }, 800);
         }
         if (chatContent) {
             chatContent.innerHTML = '';
-            // Calculate chapter duration: end - start
             const chapterDuration = timingInfo.end - timingInfo.start;
             startMemoryCardCycle(chapterId, chapterDuration);
         }
@@ -549,22 +395,13 @@ function updateChapterContent(chapterId, timingInfo) {
         removeLyricsOverlay(chapterId);
         stopCollageImages();
     } else if (timingInfo.behavior === 'B') {
-        // Full view with floating photos
         if (sidebar) sidebar.style.display = 'none';
-        if (chat) {
-            chat.style.width = '100%';
-            chat.style.minWidth = '100%';
-        }
-        if (chatContent) {
-            chatContent.innerHTML = '';
-        }
-        if (collageContainer) {
-            startCollageImages(chapterId);
-        }
+        if (chat) { chat.style.width = '100%'; chat.style.minWidth = '100%'; }
+        if (chatContent) chatContent.innerHTML = '';
+        if (collageContainer) startCollageImages(chapterId);
         addLyricsOverlay(chapterId, timingInfo.lyricsSpeed, timingInfo.lyricsOffset);
         stopTextScroll();
     } else if (timingInfo.behavior === 'C') {
-        // Finale chapter
         setupFinaleChapter(chapterId);
         stopTextScroll();
     }
@@ -574,10 +411,8 @@ function showChapter(chapterId, timingInfo) {
     const targetId = getSectionId(chapterId);
     if (!targetId) return;
     if (currentChapter === targetId) return;
-
     stopAllScrolling();
     stopCollageImages();
-
     const currentActive = document.querySelector('.chapter.active');
     if (currentActive) {
         currentActive.classList.remove('active');
@@ -586,7 +421,6 @@ function showChapter(chapterId, timingInfo) {
         const oldFinale = currentActive.querySelector('.finale-container');
         if (oldFinale) oldFinale.remove();
     }
-
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
         targetElement.classList.add('active');
@@ -594,7 +428,6 @@ function showChapter(chapterId, timingInfo) {
         currentBehavior = timingInfo.behavior;
         updateChapterContent(chapterId, timingInfo);
     }
-
     displayedMessages.clear();
 }
 
@@ -605,7 +438,6 @@ function startExperience() {
     music.playbackRate = PLAYBACK_RATE;
     music.play().catch(err => console.log('Music play failed:', err));
     musicStarted = true;
-
     document.getElementById('welcome').classList.remove('active');
     const firstChapter = 'ch1';
     showChapter(firstChapter, TIMING[firstChapter]);
@@ -614,27 +446,18 @@ function startExperience() {
 
 function startAudioSync() {
     const music = document.getElementById('background-music');
-
     audioSyncInterval = setInterval(() => {
         if (!musicStarted) return;
-
         const currentTime = music.currentTime - 13;
         if (currentTime < 0) return;
-
-        let currentTimingInfo = null;
-        let currentChapterId = null;
-
+        let currentTimingInfo = null, currentChapterId = null;
         for (let ch in TIMING) {
             const timing = TIMING[ch];
             if (currentTime >= timing.start && currentTime < timing.end) {
-                currentTimingInfo = timing;
-                currentChapterId = ch;
-                break;
+                currentTimingInfo = timing; currentChapterId = ch; break;
             }
         }
-
         if (!currentTimingInfo) return;
-
         showChapter(currentChapterId, currentTimingInfo);
         checkAndDisplayMessages(currentTime);
     }, 100);
@@ -652,36 +475,19 @@ function checkAndDisplayMessages(currentTime) {
 function displayMessage(msg) {
     const activeChat = document.querySelector('.chapter.active .chat-content');
     if (!activeChat) return;
-
-    // Clear any existing message
     const existingMsg = activeChat.querySelector('.chat-message');
-    if (existingMsg) {
-        existingMsg.remove();
-    }
-    if (currentMessageTimeout) {
-        clearTimeout(currentMessageTimeout);
-    }
-
+    if (existingMsg) existingMsg.remove();
+    if (currentMessageTimeout) clearTimeout(currentMessageTimeout);
     const msgDiv = document.createElement('div');
     msgDiv.className = 'chat-message incoming message-enter';
     msgDiv.innerHTML = `
         <div class="message-sender">${msg.sender}</div>
-        <div class="message-typing">
-            <span></span><span></span><span></span>
-        </div>
+        <div class="message-typing"><span></span><span></span><span></span></div>
     `;
     activeChat.appendChild(msgDiv);
-
-    // Show typing dots for 1.5s
     currentMessageTimeout = setTimeout(() => {
-        // Replace typing with text
-        msgDiv.innerHTML = `
-            <div class="message-sender">${msg.sender}</div>
-            <div class="message-text">${msg.text}</div>
-        `;
+        msgDiv.innerHTML = `<div class="message-sender">${msg.sender}</div><div class="message-text">${msg.text}</div>`;
         msgDiv.classList.remove('message-enter');
-
-        // Show text for 7s, then fade out
         currentMessageTimeout = setTimeout(() => {
             msgDiv.classList.add('message-exit');
             currentMessageTimeout = setTimeout(() => {
@@ -695,23 +501,14 @@ function displayMessage(msg) {
 function displayCard(cardHtml) {
     const activeChat = document.querySelector('.chapter.active .chat-content');
     if (!activeChat) return;
-
-    // Clear any existing card
     const existingCard = activeChat.querySelector('.birthday-card, .memory-card');
-    if (existingCard) {
-        existingCard.remove();
-    }
-    if (currentCardTimeout) {
-        clearTimeout(currentCardTimeout);
-    }
-
+    if (existingCard) existingCard.remove();
+    if (currentCardTimeout) clearTimeout(currentCardTimeout);
     const cardDiv = document.createElement('div');
     cardDiv.innerHTML = cardHtml;
     const card = cardDiv.firstElementChild;
     card.classList.add('card-enter');
     activeChat.appendChild(card);
-
-    // Show card for 4s, then fade out
     currentCardTimeout = setTimeout(() => {
         card.classList.remove('card-enter');
         card.classList.add('card-exit');
@@ -726,37 +523,21 @@ function startMemoryCardCycle(chapterId, chapterDuration) {
     const config = getChapterConfig(chapterId);
     const birthdayCardHtml = buildBirthdayHtml();
     const memoryCards = config.memories || [];
-    
     const totalCards = 1 + memoryCards.length;
     if (totalCards === 0) return;
-    
     const intervalPerCard = (chapterDuration * 1000) / totalCards;
     let cardIndex = 0;
-    
-    // Show birthday card first
     displayCard(birthdayCardHtml);
     cardIndex = 1;
-    
-    if (memoryCardCycleInterval) {
-        clearInterval(memoryCardCycleInterval);
-    }
-    
+    if (memoryCardCycleInterval) clearInterval(memoryCardCycleInterval);
     memoryCardCycleInterval = setInterval(() => {
         if (cardIndex < totalCards) {
             const memory = memoryCards[cardIndex - 1];
-            const memoryCardHtml = `
-                <div class="memory-card">
-                    <strong>${memory.title}</strong>
-                    <div>${memory.text}</div>
-                </div>
-            `;
+            const memoryCardHtml = `<div class="memory-card"><strong>${memory.title}</strong><div>${memory.text}</div></div>`;
             displayCard(memoryCardHtml);
             cardIndex++;
         } else {
-            if (memoryCardCycleInterval) {
-                clearInterval(memoryCardCycleInterval);
-                memoryCardCycleInterval = null;
-            }
+            if (memoryCardCycleInterval) { clearInterval(memoryCardCycleInterval); memoryCardCycleInterval = null; }
         }
     }, intervalPerCard);
 }
@@ -768,7 +549,6 @@ function loadLyricsSource() {
         lyricsSourceHtml = lyricsElement ? lyricsElement.innerHTML : sourceElement.innerHTML;
     }
 }
-
 function loadEndingLyricsSource() {
     const sourceElement = document.getElementById('ending-lyrics-source');
     if (sourceElement) {
@@ -779,20 +559,12 @@ function loadEndingLyricsSource() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const beginBtn = document.getElementById('begin-btn');
-    if (beginBtn) {
-        beginBtn.addEventListener('click', startExperience);
-    }
-
+    if (beginBtn) beginBtn.addEventListener('click', startExperience);
     document.querySelectorAll('.petals').forEach(generatePetals);
-    document.querySelectorAll('.hearts').forEach(generateHearts);
     loadLyricsSource();
     loadEndingLyricsSource();
-    
-    // Hide lyrics controls from view
     const controls = document.getElementById('lyrics-controls');
-    if (controls) {
-        controls.style.display = 'none';
-    }
+    if (controls) controls.style.display = 'none';
 });
 
 function generatePetals(container) {
@@ -807,14 +579,28 @@ function generatePetals(container) {
     }
 }
 
-function generateHearts(container) {
-    if (!container) return;
-    for (let i = 0; i < 10; i++) {
-        const heart = document.createElement('div');
-        heart.className = 'heart';
-        heart.style.left = Math.random() * 100 + '%';
-        heart.style.top = Math.random() * 100 + '%';
-        heart.style.animationDelay = Math.random() * 5 + 's';
-        container.appendChild(heart);
+/* ============================================================
+   Random backgrounds for Behavior A chapters (ch1, ch3, ch5, ch7).
+   Excludes the welcome image and the finale image.
+   Re-shuffled on every page load.
+   ============================================================ */
+(function randomizeBehaviorABackgrounds() {
+    var pool = [
+        'joan/j1.jpg', 'joan/jo2.jpg', 'joan/jo6.jpg', 'joan/jo7.jpg',
+        'joan/jo8.jpg', 'joan/jo9.jpg', 'joan/jo10.jpg', 'joan/jo11.jpg',
+        'joan/jo13.jpg', 'joan/jo14.jpg', 'joan/jo15.jpg', 'joan/jo19.jpg',
+        'joan/jo20.jpg', 'joan/jo21.jpg', 'joan/jo22.jpg', 'joan/jo23.jpg',
+        'joan/jo24.jpg', 'joan/jo25.jpg', 'joan/jo26.jpg', 'joan/jo27.jpg',
+        'joan/jo28.jpg'
+    ];
+    for (var i = pool.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
     }
-}
+    var chapters = ['chapter1', 'chapter3', 'chapter5', 'chapter7'];
+    chapters.forEach(function (id, i) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.style.setProperty('--bg-img', "url('" + pool[i % pool.length] + "')");
+    });
+})();
