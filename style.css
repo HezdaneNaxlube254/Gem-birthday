@@ -1053,28 +1053,31 @@ h1, h2 { font-family: 'Playfair Display', serif; font-weight: 700; }
     }
 }
 /* ============================================================
-   MOBILE FIX — Sun centered and visible on phones + tablets
+   MOBILE FIX — Sun visible on phones + tablets
+   Places the sun in the clear sky zone of the world layer and
+   moves the poem below it. Animation is disabled so the sun
+   does not rise back into the ground band.
    ============================================================ */
 @media (max-width: 900px) {
 
-    /* Sun: centred, sized, sitting in the clear zone
-       between the poem (top) and the girl (bottom). */
     .anime-stage .sun,
     .anime-stage .sr2 {
+        transform: none !important;
+        animation: none !important;
         left: 50% !important;
         right: auto !important;
-        margin-left: -17vmin !important;
-        width: 34vmin !important;
-        height: 34vmin !important;
-        bottom: 28% !important;
+        margin-left: -20vmin !important;
+        width: 40vmin !important;
+        height: 40vmin !important;
+        top: 0 !important;
+        bottom: auto !important;
     }
 
-    /* Poem: pinned to the top, compact, so it never reaches
-       down into the sun's space. */
     .anime-stage .poem {
+        top: 30% !important;
+        bottom: auto !important;
         left: 0 !important;
         right: 0 !important;
-        top: 1vh !important;
         transform: none !important;
         text-align: center !important;
         max-width: 100% !important;
