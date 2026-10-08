@@ -1053,8 +1053,8 @@ h1, h2 { font-family: 'Playfair Display', serif; font-weight: 700; }
     }
 }
 /* ============================================================
-   SUN — realistic yellow disc peeking over the horizon, rising.
-   Placed at end of file so it wins over every earlier rule.
+   SUN — final version.
+   Big yellow disc that rises behind the hills, half visible.
    ============================================================ */
 
 .anime-stage .sun,
@@ -1062,35 +1062,15 @@ h1, h2 { font-family: 'Playfair Display', serif; font-weight: 700; }
     left: 50% !important;
     right: auto !important;
     top: auto !important;
-    bottom: 34% !important;
-    margin-left: -11vh !important;
-    width: 22vh !important;
-    height: 22vh !important;
+    bottom: 22% !important;
+    margin-left: -17vh !important;
+    width: 34vh !important;
+    height: 34vh !important;
     border-radius: 50% !important;
-    filter: blur(0.5px) !important;
+    filter: blur(0.8px) !important;
     transform: none !important;
-    animation: sunRise 18s ease-in-out infinite alternate !important;
     z-index: 1 !important;
-}
-
-/* The regular sun (dance scene) */
-.anime-stage .sun:not(.sr2) {
-    background: radial-gradient(circle at 50% 50%,
-        #fff8d0 0%,
-        #ffe898 15%,
-        #ffd478 28%,
-        #ffbb60 42%,
-        rgba(255, 170, 90, 0.40) 62%,
-        rgba(255, 160, 90, 0) 100%) !important;
-}
-
-/* The sunrise sun (scene 2) — slightly bigger, warmer */
-.anime-stage .sun.sr2 {
-    width: 28vh !important;
-    height: 28vh !important;
-    margin-left: -14vh !important;
-    bottom: 32% !important;
-    animation-duration: 22s !important;
+    animation: sunRise 22s ease-in-out infinite alternate !important;
     background: radial-gradient(circle at 50% 50%,
         #fffbe6 0%,
         #fff0a0 12%,
@@ -1100,15 +1080,21 @@ h1, h2 { font-family: 'Playfair Display', serif; font-weight: 700; }
         rgba(255, 160, 90, 0) 100%) !important;
 }
 
+.anime-stage .sun.sr2 {
+    width: 40vh !important;
+    height: 40vh !important;
+    margin-left: -20vh !important;
+}
+
 @keyframes sunRise {
-    0%   { bottom: 28%; }   /* low — only a sliver above the hills */
-    100% { bottom: 42%; }   /* higher — just over half visible */
+    0%   { bottom: 20%; }   /* mostly hidden behind the hills */
+    100% { bottom: 32%; }   /* risen — more of it showing */
 }
 
 @media (prefers-reduced-motion: reduce) {
     .anime-stage .sun,
     .anime-stage .sun.sr2 {
         animation: none !important;
-        bottom: 34% !important;
+        bottom: 26% !important;
     }
 }
