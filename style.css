@@ -1053,15 +1053,31 @@ h1, h2 { font-family: 'Playfair Display', serif; font-weight: 700; }
     }
 }
 /* ============================================================
-   MOBILE LAYOUT FIX
-   Puts the sun where the poem and figure can't bury it.
-   Applies to all anime-stage scenes (ch2, ch4, ch6, ch8, ch9).
+   MOBILE FIX — Sun centered and visible on phones + tablets
    ============================================================ */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
-    /* --- Compact the poem so it stops reaching down into the sun --- */
+    /* Sun: centred, sized, sitting in the clear zone
+       between the poem (top) and the girl (bottom). */
+    .anime-stage .sun,
+    .anime-stage .sr2 {
+        left: 50% !important;
+        right: auto !important;
+        margin-left: -17vmin !important;
+        width: 34vmin !important;
+        height: 34vmin !important;
+        bottom: 28% !important;
+    }
+
+    /* Poem: pinned to the top, compact, so it never reaches
+       down into the sun's space. */
     .anime-stage .poem {
+        left: 0 !important;
+        right: 0 !important;
         top: 1vh !important;
+        transform: none !important;
+        text-align: center !important;
+        max-width: 100% !important;
         padding: 0 5vw !important;
     }
     .anime-stage .poem .t {
@@ -1069,9 +1085,7 @@ h1, h2 { font-family: 'Playfair Display', serif; font-weight: 700; }
         line-height: 1.15 !important;
         margin-bottom: 4px !important;
     }
-    .anime-stage .poem .t.big {
-        font-size: 1.7rem !important;
-    }
+    .anime-stage .poem .t.big { font-size: 1.7rem !important; }
     .anime-stage .poem .b {
         font-size: 0.75rem !important;
         line-height: 1.3 !important;
@@ -1080,27 +1094,4 @@ h1, h2 { font-family: 'Playfair Display', serif; font-weight: 700; }
         font-size: 0.98rem !important;
         margin-top: 3px !important;
     }
-
-    /* --- Move the suns to the upper-right so the centered
-           poem and centered figure don't cover them --- */
-    .anime-stage .sun {
-        left: auto !important;
-        right: 8% !important;
-        margin-left: 0 !important;
-        bottom: 36% !important;
-        width: 22vmin !important;
-        height: 22vmin !important;
-    }
-    .anime-stage .sr2 {
-        left: auto !important;
-        right: 5% !important;
-        margin-left: 0 !important;
-        bottom: 28% !important;
-        width: 28vmin !important;
-        height: 28vmin !important;
-    }
-
-    /* --- Lift the horizon so the sun clearly floats above it --- */
-    .anime-stage .h2    { height: 16% !important; }
-    .anime-stage .hills { height: 28% !important; }
 }
